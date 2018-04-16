@@ -1,20 +1,71 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
+  <h1>WDV341 Intro PHP</h1>
+  <h3>Survey Form</h3>
+  <div>
+    <div class="row">
+      <form name="form1" class="form-control">
+        <div class="col-md-4 offset-md-4">
+          Email:
+          <input class="form-control" type="text" name="cust_email" id="cust_email">
+        </div>
+        <br>
+        <div class="row align-items-center">
+          <div class="col-md-3 offset-md-4">
+            <p>Please rate the following times from best (1) to worst (4)</p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-4 offset-md-4">
+            <select class="form-control" [(ngModel)]="selected1" (ngModelChange)="onChangeFirst($event)" name="selected1">
+              <ng-container *ngFor="let o of optionList; let i = index">
+                <option [value]="o.description" [hidden]="!o.selected === false">{{ o.description }}</option>
+              </ng-container>
+            </select>
+            Monday/Wednesday 10:10am-Noon
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 offset-md-4">
+            <select class="form-control" [(ngModel)]="selected2" (ngModelChange)="onChangeSecond($event)" name="selected2">
+              <ng-container *ngFor="let o of optionList; let i = index">
+                <option [value]="o.description" [hidden]="!o.selected === false">{{ o.description }}</option>
+              </ng-container>
+            </select>
+            Tuesday 6:00pm-9:00pm
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 offset-md-4">
+            <select class="form-control" [(ngModel)]="selected3" (ngModelChange)="onChangeThird($event)" name="selected3">
+              <ng-container *ngFor="let o of optionList; let i = index">
+                <option [value]="o.description" [hidden]="!o.selected === false">{{ o.description }}</option>
+              </ng-container>
+            </select>
+            Wednesday 6:00pm-9:00pm
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 offset-md-4">
+            <select class="form-control" [(ngModel)]="selected4" (ngModelChange)="onChangeFourth($event)" name="selected4">
+              <ng-container *ngFor="let o of optionList; let i = index">
+                <option [value]="o.description" [hidden]="!o.selected === false">{{ o.description }}</option>
+              </ng-container>
+            </select>
+            Tuesday/Thursday 10:10am-Noon
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-4 offset-md-4 center">
+            <button class="btn btn-primary" (click)="onButtonSubmit()">Submit</button>
+            <button class="btn btn-secondary">
+              <a href="">Reset</a>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 
+</div>
