@@ -1,4 +1,4 @@
-#Angular Dynamic Dropdown#
+# Angular Dynamic Dropdown
 
 Homework assignment instructions:
 
